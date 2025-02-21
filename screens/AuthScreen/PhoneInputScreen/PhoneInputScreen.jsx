@@ -4,7 +4,7 @@ import {ROUTES} from '../../../navigation/routes';
 import {FONTS} from '../../../theme/font';
 import {PrimaryButton} from '../../../components/ButtonComponent';
 import {AuthHeader} from '../../../components/HeaderComponent/AuthHeader';
-import {Progress1} from '../../../assets/progress';
+import {Progress2} from '../../../assets/progress';
 import {CustomPhoneInput} from '../../../components/PhoneInputComponent';
 const PhoneInputScreen = ({navigation}) => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -12,7 +12,7 @@ const PhoneInputScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Progress1 width="100%" height="6" style={{marginBottom: 20}} />
+      <Progress2 width="100%" height="6" style={{marginBottom: 20}} />
       <AuthHeader navigation={navigation} />
       <Text style={styles.title}>Enter your number</Text>
       <Text style={styles.description}>

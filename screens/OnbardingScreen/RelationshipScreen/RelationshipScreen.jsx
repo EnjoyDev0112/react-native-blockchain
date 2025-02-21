@@ -3,7 +3,7 @@ import {View, StyleSheet, Text, Image} from 'react-native';
 import {ROUTES} from '../../../navigation/routes';
 import {FONTS} from '../../../theme/font';
 import {PrimaryButton} from '../../../components/ButtonComponent';
-import {Progress1} from '../../../assets/progress';
+import {Progress6} from '../../../assets/progress';
 import {CustomSelectList} from '../../../components/SelecterComponent';
 
 const RelationshipScreen = ({navigation}) => {
@@ -17,7 +17,7 @@ const RelationshipScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Progress1 width="100%" height="6" style={{marginBottom: 20}} />
+      <Progress6 width="100%" height="6" style={{marginBottom: 20}} />
       <Text style={styles.title}>What is your relationship status?</Text>
       <View style={styles.childContainer}>
         <CustomSelectList

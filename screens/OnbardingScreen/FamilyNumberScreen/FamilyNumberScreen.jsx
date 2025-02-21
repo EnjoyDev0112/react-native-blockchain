@@ -3,7 +3,7 @@ import {View, StyleSheet, Text, Image} from 'react-native';
 import {ROUTES} from '../../../navigation/routes';
 import {FONTS} from '../../../theme/font';
 import {PrimaryButton} from '../../../components/ButtonComponent';
-import {Progress1} from '../../../assets/progress';
+import {Progress7} from '../../../assets/progress';
 import {CustomSelectList} from '../../../components/SelecterComponent';
 
 const FamilyNumberScreen = ({navigation}) => {
@@ -14,7 +14,7 @@ const FamilyNumberScreen = ({navigation}) => {
   ];
   return (
     <View style={styles.container}>
-      <Progress1 width="100%" height="6" style={{marginBottom: 20}} />
+      <Progress7 width="100%" height="6" style={{marginBottom: 20}} />
       <Text style={styles.title}>How many people are in your household?</Text>
       <View style={styles.childContainer}>
         <CustomSelectList

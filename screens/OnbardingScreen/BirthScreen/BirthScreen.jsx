@@ -3,12 +3,12 @@ import {View, StyleSheet, Text} from 'react-native';
 import {ROUTES} from '../../../navigation/routes';
 import {FONTS} from '../../../theme/font';
 import {PrimaryButton} from '../../../components/ButtonComponent';
-import {Progress1} from '../../../assets/progress';
+import {Progress5} from '../../../assets/progress';
 
 const BirthScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Progress1 width="100%" height="6" style={{marginBottom: 20}} />
+      <Progress5 width="100%" height="6" style={{marginBottom: 20}} />
       <Text style={styles.title}>When were you born?</Text>
       <View style={styles.childContainer}>
         <Text>child</Text>

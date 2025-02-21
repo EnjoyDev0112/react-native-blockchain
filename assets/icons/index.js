@@ -8,6 +8,11 @@ import EyeIconSVG from './eye-icon.svg';
 import EyeOffIconSVG from './eye-off-icon.svg';
 import RadioSVG from './radio.svg';
 import RadioFilledSVG from './radio-filled.svg';
+import HomeSVG from './home.svg';
+import MessageSVG from './message.svg';
+import ProfileSVG from './profile.svg';
+import HomeFilledSVG from './home_filled.svg';
+import ProfileFilledSVG from './profile_filled.svg';
 
 export {
   DropdownSVG,
@@ -20,4 +25,9 @@ export {
   EyeOffIconSVG,
   RadioSVG,
   RadioFilledSVG,
+  HomeSVG,
+  MessageSVG,
+  ProfileSVG,
+  HomeFilledSVG,
+  ProfileFilledSVG,
 };

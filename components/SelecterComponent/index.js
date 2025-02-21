@@ -9,6 +9,7 @@ export const CustomSelectList = ({dataList, value, setValue}) => {
     <View style={styles.container}>
       {dataList.map((item, index) => (
         <View
+          key={index}
           style={{
             display: 'flex',
             width: '100%',

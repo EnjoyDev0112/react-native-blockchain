@@ -3,7 +3,7 @@ import {View, StyleSheet, Text} from 'react-native';
 import {ROUTES} from '../../../navigation/routes';
 import {FONTS} from '../../../theme/font';
 import {PrimaryButton} from '../../../components/ButtonComponent';
-import {Progress1} from '../../../assets/progress';
+import {Progress8} from '../../../assets/progress';
 import {CustomSelectList} from '../../../components/SelecterComponent';
 
 const VehicleScreen = ({navigation}) => {
@@ -14,7 +14,7 @@ const VehicleScreen = ({navigation}) => {
   ];
   return (
     <View style={styles.container}>
-      <Progress1 width="100%" height="6" style={{marginBottom: 20}} />
+      <Progress8 width="100%" height="6" style={{marginBottom: 20}} />
       <Text style={styles.title}>Do you have a vehicle?</Text>
       <View style={styles.childContainer}>
         <CustomSelectList

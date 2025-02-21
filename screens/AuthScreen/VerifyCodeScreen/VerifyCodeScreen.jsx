@@ -4,7 +4,7 @@ import {ROUTES} from '../../../navigation/routes';
 import {FONTS} from '../../../theme/font';
 import {PrimaryButton} from '../../../components/ButtonComponent';
 import {AuthHeader} from '../../../components/HeaderComponent/AuthHeader';
-import {Progress1} from '../../../assets/progress';
+import {Progress3} from '../../../assets/progress';
 import LinearGradient from 'react-native-linear-gradient';
 
 import {
@@ -25,7 +25,7 @@ const VerifyCodeScreen = ({navigation}) => {
   });
   return (
     <View style={styles.container}>
-      <Progress1 width="100%" height="6" style={{marginBottom: 20}} />
+      <Progress3 width="100%" height="6" style={{marginBottom: 20}} />
       <AuthHeader navigation={navigation} />
       <View style={{width: 260, display: 'flex'}}>
         <Text style={styles.title}>Enter 4 digit verification code</Text>

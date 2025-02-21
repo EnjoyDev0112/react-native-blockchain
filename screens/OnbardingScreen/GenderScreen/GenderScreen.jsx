@@ -3,7 +3,7 @@ import {View, StyleSheet, Text, Image} from 'react-native';
 import {ROUTES} from '../../../navigation/routes';
 import {FONTS} from '../../../theme/font';
 import {PrimaryButton} from '../../../components/ButtonComponent';
-import {Progress1} from '../../../assets/progress';
+import {Progress4} from '../../../assets/progress';
 import {CustomSelectList} from '../../../components/SelecterComponent';
 const GenderScreen = ({navigation}) => {
   const [gender, setGender] = useState('Male');
@@ -14,7 +14,7 @@ const GenderScreen = ({navigation}) => {
   ];
   return (
     <View style={styles.container}>
-      <Progress1 width="100%" height="6" style={{marginBottom: 20}} />
+      <Progress4 width="100%" height="6" style={{marginBottom: 20}} />
       <Text style={styles.title}>What is your gender?</Text>
       <View style={styles.childContainer}>
         <CustomSelectList
