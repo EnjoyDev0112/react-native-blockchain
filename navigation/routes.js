@@ -16,4 +16,9 @@ export const ROUTES = {
   SuccessSignupScreen: 'success-signup',
   VehicleScreen: 'vehicle',
   MessageScreen: 'message',
+  BlockM_1_Screen: 'blockm-1',
+  BlockM_2_Screen: 'blockm-2',
+  BlockM_3_Screen: 'blockm-3',
+  BlockM_4_Screen: 'blockm-4',
+  BlockM_5_Screen: 'blockm-5',
 };

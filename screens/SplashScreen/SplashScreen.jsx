@@ -25,7 +25,9 @@ const SplashScreen = ({}) => {
     </View>
   ) : (
     <SafeAreaProvider>
-      <SafeAreaView style={{flex: 1, backgroundColor: '#171717'}}>
+      <SafeAreaView
+        style={{flex: 1, backgroundColor: '#171717'}}
+        edges={['left', 'right', 'top']}>
         <Navigator />
       </SafeAreaView>
     </SafeAreaProvider>

@@ -15,13 +15,13 @@ import GenderScreen from '../screens/OnbardingScreen/GenderScreen';
 import RelationshipScreen from '../screens/OnbardingScreen/RelationshipScreen';
 import SuccessSignupScreen from '../screens/OnbardingScreen/SuccessSignupScreen';
 import VehicleScreen from '../screens/OnbardingScreen/VehicleScreen';
-// import TabNavigator from './TabNavigator'
+import TabNavigator from './TabNavigator';
 
-const NavigationStack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const Navigator = ({isAuth}) => {
   return (
-    <NavigationStack.Navigator
+    <Stack.Navigator
       id={undefined}
       //   initialRouteName={isAuth ? ROUTES.TabScreen : ROUTES.StartScreen}
       initialRouteName={ROUTES.StartScreen}
@@ -29,60 +29,39 @@ const Navigator = ({isAuth}) => {
         headerShown: false,
         gestureEnabled: true,
       }}>
-      <NavigationStack.Screen
-        component={StartScreen}
-        name={ROUTES.StartScreen}
-      />
-      <NavigationStack.Screen component={AuthScreen} name={ROUTES.AuthScreen} />
-      <NavigationStack.Screen
-        component={LoginScreen}
-        name={ROUTES.LoginScreen}
-      />
-      <NavigationStack.Screen
-        component={RegisterScreen}
-        name={ROUTES.RegisterScreen}
-      />
-      <NavigationStack.Screen
+      <Stack.Screen component={StartScreen} name={ROUTES.StartScreen} />
+      <Stack.Screen component={AuthScreen} name={ROUTES.AuthScreen} />
+      <Stack.Screen component={LoginScreen} name={ROUTES.LoginScreen} />
+      <Stack.Screen component={RegisterScreen} name={ROUTES.RegisterScreen} />
+      <Stack.Screen
         component={PhoneInputScreen}
         name={ROUTES.PhoneInputScreen}
       />
-      <NavigationStack.Screen
+      <Stack.Screen
         component={VerifyCodeScreen}
         name={ROUTES.VerifyCodeScreen}
       />
-      <NavigationStack.Screen
+      <Stack.Screen
         component={OnboardingScreen}
         name={ROUTES.OnboardingScreen}
       />
-      <NavigationStack.Screen
-        component={GenderScreen}
-        name={ROUTES.GenderScreen}
-      />
-      <NavigationStack.Screen
-        component={BirthScreen}
-        name={ROUTES.BirthScreen}
-      />
-      <NavigationStack.Screen
+      <Stack.Screen component={GenderScreen} name={ROUTES.GenderScreen} />
+      <Stack.Screen component={BirthScreen} name={ROUTES.BirthScreen} />
+      <Stack.Screen
         component={RelationshipScreen}
         name={ROUTES.RelationshipScreen}
       />
-      <NavigationStack.Screen
+      <Stack.Screen
         component={FamilyNumberScreen}
         name={ROUTES.FamilyNumberScreen}
       />
-      <NavigationStack.Screen
-        component={VehicleScreen}
-        name={ROUTES.VehicleScreen}
-      />
-      <NavigationStack.Screen
+      <Stack.Screen component={VehicleScreen} name={ROUTES.VehicleScreen} />
+      <Stack.Screen
         component={SuccessSignupScreen}
         name={ROUTES.SuccessSignupScreen}
       />
-      {/* <NavigationStack.Screen
-        component={TabNavigator}
-        name={ROUTES.TabScreen}
-      /> */}
-    </NavigationStack.Navigator>
+      <Stack.Screen component={TabNavigator} name={ROUTES.TabScreen} />
+    </Stack.Navigator>
   );
 };
 

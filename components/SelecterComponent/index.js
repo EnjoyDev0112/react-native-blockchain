@@ -4,7 +4,12 @@ import {StyleSheet} from 'react-native';
 import {RadioSVG, RadioFilledSVG} from '../../assets/icons';
 import {FONTS} from '../../theme/font';
 
-export const CustomSelectList = ({dataList, value, setValue}) => {
+export const CustomSelectList = ({
+  dataList,
+  value,
+  setValue,
+  type = 'default',
+}) => {
   return (
     <View style={styles.container}>
       {dataList.map((item, index) => (
@@ -20,7 +25,13 @@ export const CustomSelectList = ({dataList, value, setValue}) => {
             style={styles.item}
             key={index}
             onPress={() => setValue(item.value)}>
-            <Text style={styles.label}>{item.label}</Text>
+            <Text
+              style={[
+                styles.label,
+                {color: type === 'secondary' ? '#BBB' : 'white'},
+              ]}>
+              {item.label}
+            </Text>
             {item.value === value ? <RadioFilledSVG /> : <RadioSVG />}
           </TouchableOpacity>
         </View>
@@ -47,7 +58,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   label: {
-    color: 'white',
     fontSize: 16,
     fontFamily: FONTS.REGULAR,
   },

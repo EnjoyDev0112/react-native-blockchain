@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
     gap: 16,
+    marginBottom: 32,
   },
 });
 

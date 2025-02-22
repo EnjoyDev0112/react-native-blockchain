@@ -24,7 +24,7 @@ const SuccessSignupScreen = ({navigation}) => {
       <View style={styles.buttonContainer}>
         <PrimaryButton
           label="NEXT"
-          onPress={() => navigation.navigate(ROUTES.GenderScreen)}
+          onPress={() => navigation.navigate(ROUTES.TabScreen)}
         />
       </View>
     </View>
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
     paddingTop: 32,
-    marginBottom: 16,
+    marginBottom: 40,
   },
 });
 
