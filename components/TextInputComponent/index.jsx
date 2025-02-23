@@ -17,6 +17,7 @@ export const CustomTextInput = ({
   value = '',
   onChange = () => {},
   style = {},
+  inputTextStyle = 'white',
   ...props
 }) => {
   const [isSecureTextEntry, setIsSecureTextEntry] = useState(
@@ -41,7 +42,7 @@ export const CustomTextInput = ({
             value={value}
             onChangeText={onChange}
             keyboardType={keyboardType}
-            style={[styles.input, style, {flex: 1}]}
+            style={[styles.input, style, {flex: 1, color: inputTextStyle}]}
             selectionColor="white"
             secureTextEntry={isSecureTextEntry}
             {...props}
@@ -62,7 +63,7 @@ export const CustomTextInput = ({
           value={value}
           onChangeText={onChange}
           keyboardType={keyboardType}
-          style={[styles.input, style]}
+          style={[styles.input, style, {color: inputTextStyle}]}
           selectionColor="white"
           {...props}
         />
@@ -86,7 +87,6 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.REGULAR,
   },
   input: {
-    color: 'white',
     fontSize: 14,
     fontFamily: FONTS.REGULAR,
     width: '100%',

@@ -5,6 +5,7 @@ import SuccessSignupSVG from './success_signup.svg';
 import LogoSVG from './logo.svg';
 import GradientBG from './gradient_bg.svg';
 import EarnedSVG from './earned.svg';
+import DefaultAvatarSVG from './default_avatar.svg';
 
 export {
   StartImageSVG,
@@ -14,4 +15,5 @@ export {
   LogoSVG,
   GradientBG,
   EarnedSVG,
+  DefaultAvatarSVG,
 };

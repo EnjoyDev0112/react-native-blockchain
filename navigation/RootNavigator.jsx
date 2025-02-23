@@ -1,6 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import {ROUTES} from './routes';
 import AuthScreen from '../screens/AuthScreen';
 import StartScreen from '../screens/StartScreen';
@@ -16,8 +16,10 @@ import RelationshipScreen from '../screens/OnbardingScreen/RelationshipScreen';
 import SuccessSignupScreen from '../screens/OnbardingScreen/SuccessSignupScreen';
 import VehicleScreen from '../screens/OnbardingScreen/VehicleScreen';
 import TabNavigator from './TabNavigator';
+import DrawerNavigator from './DrawerNavigator';
 
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const Navigator = ({isAuth}) => {
   return (
@@ -60,7 +62,7 @@ const Navigator = ({isAuth}) => {
         component={SuccessSignupScreen}
         name={ROUTES.SuccessSignupScreen}
       />
-      <Stack.Screen component={TabNavigator} name={ROUTES.TabScreen} />
+      <Stack.Screen component={DrawerNavigator} name={ROUTES.TabScreen} />
     </Stack.Navigator>
   );
 };

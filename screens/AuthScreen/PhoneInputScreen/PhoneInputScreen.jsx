@@ -5,7 +5,7 @@ import {FONTS} from '../../../theme/font';
 import {PrimaryButton} from '../../../components/ButtonComponent';
 import {AuthHeader} from '../../../components/HeaderComponent/AuthHeader';
 import {Progress2} from '../../../assets/progress';
-import {CustomPhoneInput} from '../../../components/PhoneInputComponent';
+import {CustomPhoneInput} from '../../../components/PhoneInputComponent/SecondaryPhoneInput';
 const PhoneInputScreen = ({navigation}) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [countryCode, setCountryCode] = useState('');

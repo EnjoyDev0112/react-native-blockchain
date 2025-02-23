@@ -15,6 +15,7 @@ import TabBar from '../components/TabBarComponent';
 import MessageScreen from '../screens/MessageScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import BlockMNavigator from './BlockMNavigator';
+import ProfileNavigator from './ProfileNavigator';
 import {ROUTES} from './routes';
 
 const TabStack = createBottomTabNavigator();
@@ -24,7 +25,7 @@ const TabNavigator = () => {
     <TabStack.Navigator
       id={undefined}
       tabBar={props => <TabBar {...props} />}
-      initialRouteName={ROUTES.HomeScreen}
+      initialRouteName={ROUTES.ProfileScreen}
       screenOptions={({route}) => ({
         unmountOnBlur: true,
         tabBarShowLabel: false,
@@ -58,7 +59,7 @@ const TabNavigator = () => {
         }}
       />
       <TabStack.Screen
-        component={ProfileScreen}
+        component={ProfileNavigator}
         name={ROUTES.ProfileScreen}
         options={{
           tabBarLabel: 'Profile',

@@ -21,4 +21,8 @@ export const ROUTES = {
   BlockM_3_Screen: 'blockm-3',
   BlockM_4_Screen: 'blockm-4',
   BlockM_5_Screen: 'blockm-5',
+  EditProfileScreen: 'edit-profile',
+  LanguageScreen: 'language',
+  PrivacyPolicyScreen: 'privacy-policy',
+  DrawerScreen: 'drawer',
 };

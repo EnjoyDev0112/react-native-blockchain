@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {FONTS} from '../../theme/font';
 import {HomeHeader} from '../../components/HeaderComponent/HomeHeader';
 import {GradientBG} from '../../assets/images';
 import {ROUTES} from '../../navigation/routes';
+
 import {
   BlockMSVG,
   BlockMUDISVG,
@@ -44,13 +45,17 @@ const BlockButton = ({color, Icon, name, navigation}) => (
 );
 
 const HomeScreen = ({navigation}) => {
+  const drawerRef = useRef(null);
+
   const renderBlockRows = () => {
     const rows = [];
     for (let i = 0; i < BLOCK_DATA.length; i += 2) {
       rows.push(
         <View key={i} style={styles.buttonRow}>
           <BlockButton {...BLOCK_DATA[i]} navigation={navigation} />
-          {i + 1 < BLOCK_DATA.length && <BlockButton {...BLOCK_DATA[i + 1]} />}
+          {i + 1 < BLOCK_DATA.length && (
+            <BlockButton {...BLOCK_DATA[i + 1]} navigation={navigation} />
+          )}
         </View>,
       );
     }
@@ -161,6 +166,16 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: FONTS.REGULAR,
     fontWeight: '400',
+  },
+  drawerContent: {
+    flex: 1,
+    backgroundColor: '#232323',
+    padding: 20,
+  },
+  drawerText: {
+    color: 'white',
+    fontSize: 18,
+    fontFamily: FONTS.REGULAR,
   },
 });
 

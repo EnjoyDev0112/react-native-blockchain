@@ -7,63 +7,22 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {ROUTES} from '../../../navigation/routes';
-import {EyeIconSVG, EyeOffIconSVG, ArrowDownSVG} from '../../../assets/icons';
+import {EyeIconSVG, EyeOffIconSVG} from '../../../assets/icons';
 import {FONTS} from '../../../theme/font';
 import {PrimaryButton} from '../../../components/ButtonComponent';
 import {AuthHeader} from '../../../components/HeaderComponent/AuthHeader';
-import PhoneInput from 'react-native-phone-number-input';
+import {CustomPhoneInput} from '../../../components/PhoneInputComponent/DefaultPhoneInput';
 
 const LoginScreen = ({navigation}) => {
   const phoneInput = useRef(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
-  const handleSignIn = () => {
-    console.log(phoneInput.current.getNumber());
-  };
-
+  const [number, setNumber] = useState('');
   return (
     <View style={styles.container}>
       <AuthHeader navigation={navigation} />
       <Text style={styles.title}>Log in</Text>
       <View style={styles.inputContainer}>
-        <View style={styles.textInputContainer}>
-          <Text
-            style={{color: 'white', fontSize: 13, fontFamily: FONTS.REGULAR}}>
-            Phone Number
-          </Text>
-          <PhoneInput
-            ref={phoneInput}
-            defaultValue={''}
-            defaultCode="US"
-            layout="first"
-            placeholder="Enter your valid number"
-            renderDropdownImage={<ArrowDownSVG />}
-            textInputStyle={{
-              color: 'white',
-              fontSize: 16,
-              marginTop: 2,
-            }}
-            textInputProps={{
-              backgroundColor: '#171717',
-              color: 'white',
-              placeholderTextColor: '#7C7B7B',
-              onSubmitEditing: handleSignIn,
-              selectionColor: 'white',
-            }}
-            flagButtonStyle={{
-              backgroundColor: '#171717',
-              autoFocus: true,
-              marginRight: -16,
-              paddingTop: 4,
-              marginLeft: -16,
-              gap: -4,
-            }}
-            codeTextStyle={{color: 'white'}}
-            containerStyle={styles.phoneContainer}
-            textContainerStyle={styles.textInput}
-            onChangeFormattedText={text => {}}
-          />
-        </View>
+        <CustomPhoneInput value={number} setValue={setNumber} />
         <View style={styles.textInputContainer}>
           <Text
             style={{color: 'white', fontSize: 13, fontFamily: FONTS.REGULAR}}>
@@ -118,6 +77,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     gap: 6,
     marginBottom: 60,
+    marginTop: 24,
   },
   text: {
     color: 'white',
@@ -127,7 +87,6 @@ const styles = StyleSheet.create({
   title: {
     color: 'white',
     fontSize: 24,
-    lineHeight: '120%',
     textAlign: 'center',
     fontFamily: FONTS.BOLD,
     marginBottom: 24,
@@ -138,11 +97,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
     gap: 16,
-  },
-  phoneContainer: {
-    color: 'white',
-    width: '100%',
-    height: 50,
   },
   textInput: {
     backgroundColor: '#171717',
