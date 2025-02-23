@@ -6,6 +6,7 @@ import {PrimaryButton} from '../../components/ButtonComponent';
 import {MainHeader} from '../../components/HeaderComponent/MainHeader';
 import {CustomTextInput} from '../../components/TextInputComponent';
 import {CustomPhoneInput} from '../../components/PhoneInputComponent/DefaultPhoneInput';
+import {CustomCountrySelector} from '../../components/CountrySelectorComponent';
 
 const EditProfileScreen = ({navigation}) => {
   const [firstName, setFirstName] = useState('Puerto');
@@ -44,12 +45,10 @@ const EditProfileScreen = ({navigation}) => {
           onChangeText={setEmail}
           inputTextStyle="gray"
         />
-        <CustomTextInput
-          label="Country"
-          placeholder="Choose country"
+        <CustomCountrySelector
           value={country}
-          onChangeText={setCountry}
-          inputTextStyle="gray"
+          setValue={setCountry}
+          textColor="gray"
         />
         <CustomTextInput
           type="password"

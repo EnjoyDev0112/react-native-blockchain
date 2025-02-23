@@ -3,13 +3,18 @@ import {TouchableOpacity, View, Text} from 'react-native';
 import {StyleSheet} from 'react-native';
 import {NotifySVG, UserLogoSVG} from '../../../assets/icons';
 import {LogoSVG} from '../../../assets/images';
+import {ROUTES} from '../../../navigation/routes';
 
-export const HomeHeader = () => (
+export const HomeHeader = ({navigation}) => (
   <View style={styles.container}>
     <LogoSVG width={100} height={19} />
     <View style={styles.iconContainer}>
       <NotifySVG width={24} height={24} />
-      <UserLogoSVG width={24} height={24} />
+      <UserLogoSVG
+        width={24}
+        height={24}
+        onPress={() => navigation.navigate(ROUTES.ProfileScreen)}
+      />
     </View>
   </View>
 );

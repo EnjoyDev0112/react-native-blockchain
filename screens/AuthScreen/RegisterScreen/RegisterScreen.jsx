@@ -10,6 +10,7 @@ import {AuthHeader} from '../../../components/HeaderComponent/AuthHeader';
 import {Progress1} from '../../../assets/progress';
 import {CustomTextInput} from '../../../components/TextInputComponent';
 import Checkbox from 'react-native-check-box';
+import {CustomCountrySelector} from '../../../components/CountrySelectorComponent';
 
 const RegisterScreen = ({navigation}) => {
   const [firstName, setFirstName] = useState('');
@@ -18,6 +19,7 @@ const RegisterScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
   const [country, setCountry] = useState('');
   const [isChecked, setIsChecked] = useState(false);
+
   return (
     <View style={styles.container}>
       <Progress1 width="100%" height="6" style={{marginBottom: 20}} />
@@ -42,12 +44,7 @@ const RegisterScreen = ({navigation}) => {
           value={email}
           onChangeText={setEmail}
         />
-        <CustomTextInput
-          label="Country"
-          placeholder="Choose country"
-          value={country}
-          onChangeText={setCountry}
-        />
+        <CustomCountrySelector value={country} setValue={setCountry} />
         <CustomTextInput
           type="password"
           label="Password"
@@ -94,7 +91,14 @@ const RegisterScreen = ({navigation}) => {
             fontFamily: FONTS.REGULAR,
             textAlign: 'center',
           }}>
-          Already have an account? <Text style={styles.pinkText}>Log in</Text>
+          Already have an account?{' '}
+          <Text
+            onPress={() => {
+              navigation.navigate(ROUTES.LoginScreen);
+            }}
+            style={styles.pinkText}>
+            Log in
+          </Text>
         </Text>
       </View>
     </View>

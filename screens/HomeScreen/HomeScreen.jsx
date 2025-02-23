@@ -64,7 +64,7 @@ const HomeScreen = ({navigation}) => {
 
   return (
     <View style={styles.rootContainer}>
-      <HomeHeader />
+      <HomeHeader navigation={navigation} />
       <View style={styles.mainContainer}>
         <View style={styles.gradientContainer}>
           <GradientBG style={styles.gradientBG} width="100%" height={250} />
