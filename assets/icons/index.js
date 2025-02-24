@@ -42,7 +42,7 @@ import BlockRIDEGraySVG from './block_ride_gray.svg';
 import ArtistNFTGraySVG from './artist_nft_gray.svg';
 import BlockLOANSGraySVG from './block_loans_gray.svg';
 import BlockFARMGraySVG from './block_farm_gray.svg';
-
+import LogoutSVG from './logout.svg';
 export {
   DropdownSVG,
   LanguageSVG,
@@ -88,4 +88,5 @@ export {
   ArtistNFTGraySVG,
   BlockLOANSGraySVG,
   BlockFARMGraySVG,
+  LogoutSVG,
 };

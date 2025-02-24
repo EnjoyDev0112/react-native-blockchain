@@ -16,10 +16,21 @@ import {
 } from '../../assets/icons';
 import {ROUTES} from '../../navigation/routes';
 import CustomSwitch from '../../components/SwitchComponent';
+import {useTheme} from '../../context/ThemeContext';
 
 const ProfileScreen = ({navigation}) => {
+  const {theme, toggleTheme} = useTheme();
   const [allowNotify, setAllowNotify] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(theme.name === 'dark');
+
+  useEffect(() => {
+    if (isDarkMode) {
+      toggleTheme('dark');
+    } else {
+      toggleTheme('light');
+    }
+  }, [isDarkMode]);
+
   return (
     <View style={styles.container}>
       <MainHeader

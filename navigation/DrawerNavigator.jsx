@@ -17,6 +17,7 @@ import {
   BlockFARMGraySVG,
   MessageGraySVG,
   ProfileGraySVG,
+  LogoutSVG,
 } from '../assets/icons';
 import {FONTS} from '../theme/font';
 import {View, Text, TouchableOpacity} from 'react-native';
@@ -81,7 +82,7 @@ const drawerItems = [
 const DrawerContent = props => {
   const {navigation} = props;
   return (
-    <View style={{padding: 20, gap: 24}}>
+    <View style={{padding: 20, gap: 24, height: '100%'}}>
       <LogoSVG
         onPress={() => navigation.navigate(ROUTES.TabScreen)}
         width={100}
@@ -104,6 +105,27 @@ const DrawerContent = props => {
           </Text>
         </TouchableOpacity>
       ))}
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'flex-end',
+          marginBottom: 8,
+        }}>
+        <TouchableOpacity
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 16,
+          }}
+          onPress={() => navigation.navigate(ROUTES.StartScreen)}>
+          <LogoutSVG />
+          <Text
+            style={{color: '#F05757', fontSize: 16, fontFamily: FONTS.BOLD}}>
+            Logout
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -125,7 +147,7 @@ const DrawerNavigator = () => {
         name={ROUTES.TabScreen}
         component={TabNavigator}
         options={{
-          drawerIcon: () => <BlockMSVG />,
+          drawerIcon: () => <BlockMGraySVG />,
           drawerLabel: 'BLOCK M',
           drawerLabelStyle: {
             color: '#c7c6c6',

@@ -29,7 +29,7 @@ export const CustomCountrySelector = ({
       <CountryPicker
         show={showCountryPicker}
         pickerButtonOnPress={item => {
-          setValue(item.code);
+          setValue(item.name.en);
           setShowCountryPicker(false);
         }}
         onBackdropPress={() => {

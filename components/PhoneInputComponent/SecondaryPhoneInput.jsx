@@ -1,30 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, TextInput, View} from 'react-native';
 import CountryPicker from 'react-native-country-picker-modal';
 import {FONTS} from '../../theme/font';
 
 export const CustomPhoneInput = ({
-  countryCode,
-  phone,
-  onChangeCountry,
-  onChangePhone,
-  label,
+  countryNumber = '+1',
+  setCountryNumber,
+  phoneNumber,
+  setPhoneNumber,
+  label = '',
   errorMessage = '',
 }) => {
+  const [countryCode, setCountryCode] = useState('US');
   const handleChangeCountry = country => {
-    onChangeCountry(country);
-    // props.clearErrorMessage?.();
+    setCountryNumber(`+${country?.callingCode}`);
+    setCountryCode(country?.cca2);
   };
   const handleChangeText = value => {
-    onChangePhone(value);
-    // props.clearErrorMessage?.();
+    setPhoneNumber(value);
   };
   return (
     <View style={styles.container}>
       <View style={styles.row}>
         <CountryPicker
           containerButtonStyle={styles.countryPickerButton}
-          countryCode={countryCode || 'DE'}
+          countryCode={countryCode}
           withCallingCode
           withCallingCodeButton
           withFilter
@@ -48,7 +48,7 @@ export const CustomPhoneInput = ({
           autoComplete="tel"
           textContentType="telephoneNumber"
           onChangeText={handleChangeText}
-          value={phone}
+          value={phoneNumber}
           placeholder="(000) 000-00-00"
           placeholderTextColor="#534F4F"
           selectionColor="white"
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     fontFamily: FONTS.BOLD,
-    fontSize: 24,
+    fontSize: 26,
     color: 'white',
     flex: 1,
     paddingLeft: 12,
