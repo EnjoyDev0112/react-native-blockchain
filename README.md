@@ -1,1 +1,1 @@
-# react-native-blockM
+# react-native-blockchain
